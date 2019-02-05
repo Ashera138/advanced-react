@@ -15,12 +15,15 @@ class App extends React.Component {
         };
         console.log(this.state);
     }
+    articleActions = {
+        lookupAuthor: authorId => this.state.authors[authorId],
+    };
     render() {
         return (
             <div>
                 <ArticleList
                     articles={this.state.articles}
-                    authors={this.state.authors}
+                    articleActions={this.articleActions}
                 />
             </div>
         );
